@@ -7,7 +7,6 @@
   <PropertyGroup>
     <ExecNpmInstallCommand>true</ExecNpmInstallCommand>
     <NpmInstallCommand>npm install</NpmInstallCommand>
-    <PnpmInstallCommand>pnpm install</PnpmInstallCommand>
     <CreateNpmInstallStampFile>true</CreateNpmInstallStampFile>
     <NpmInstallStampFile>$(NodeModulesFolderPath)\.install-stamp</NpmInstallStampFile>
   </PropertyGroup>
