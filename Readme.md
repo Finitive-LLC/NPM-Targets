@@ -2,6 +2,9 @@
 
 
 
+[![Lombiq.Npm.Targets NuGet](https://img.shields.io/nuget/v/Lombiq.Npm.Targets?label=Lombiq.Npm.Targets)](https://www.nuget.org/packages/Lombiq.Npm.Targets/)
+
+
 ## About
 
 Provides automatic NPM package installation and a custom NPM command execution before building a .NET project. This way it is possible for example to manage assets (e.g. .scss files or images) in a folder that will be automatically compiled into the _wwwroot_ folder on build, which then can be excluded from the version control system.
@@ -15,7 +18,7 @@ Do you want to quickly try out this project and see it in action? Check it out i
 
 ## How to use
 
-Add the following lines to the csproj file where the _package.json_ file is. Make sure that the paths are pointing to the _Lombiq.Npm.Targets.props_ and _Lombiq.Npm.Targets.targets_ files in this project.
+Install the [NuGet package](https://www.nuget.org/packages/Lombiq.Npm.Targets/) or if you use the project from a submodule, add the following lines to the csproj file where the _package.json_ file is. Make sure that the paths are pointing to the _Lombiq.Npm.Targets.props_ and _Lombiq.Npm.Targets.targets_ files of this project.
 
 ```
 <Import Project="path\to\Lombiq.Npm.Targets\Lombiq.Npm.Targets.props" />
@@ -26,7 +29,7 @@ The `npm install` (or `pnpm install`, see below) command will be executed but on
 
 An `npm run dotnet-prebuild --if-present` script will be also executed during the build process which can be utilized to run a Gulp task for example. This will only happen if the files defined in `NpmDotnetPrebuildWatchedFiles` have changed (to achieve [incremental build](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-build-incrementally?view=vs-2019)).
 
-If you want to utilize this then add a `dotnet-prebuild` script to the _package.json_ file like this (`gulp build` is just an example of a command you can run):
+If you want to utilize this then add a `dotnet-prebuild` script to the _package.json_ file like this (`gulp build` is just an example of a command you can run; you can also run the default gulp command with just `gulp`):
 
 ```
 {
